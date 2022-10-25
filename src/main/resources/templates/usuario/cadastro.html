@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+<link
+	href="https://fonts.googleapis.com/css?family=Handlee&display=swap"
+	rel="stylesheet">
+
+<style>
+.logo-container {
+	background-color: rgb(0, 128, 0);
+		color: rgb(244, 244, 244);
+}
+
+.logo {
+	font-family: 'Handlee', cursive;
+	font-size: 2.5rem;
+}
+</style>
+<meta charset="UTF-8">
+<title>Cadastre-se</title>
+</head>
+<body>
+
+
+	<div class="row logo-container p-3 d-flex justify-content-between">
+		<span class="logo ml-5">Cadastrando novo usuario</span> <span
+			class="mt-3 mr-5"> <a class="text-light ml-4" href="/home"
+			title="Voltar para a Home">Home</a>
+		</span>
+
+	</div>
+
+	<div class="container mt-3">
+		<div class="card mb-3">
+			<h1 class="ml-2 mt-2">Cadastro de Usuarios</h1>
+			<form th:action="@{/usuario/cadastro}" class="card-body"
+				method="post">
+				<div class="form-group">
+
+					<label for="username" title="Sera cadastrado diretamente no Banco">Nome :</label>
+					<input name="username" class="form-control"
+						placeholder="Digite seu nome : " />
+				</div>
+				<div class="form-group">
+					<label for="password" title="Sera cadastrado diretamente no Banco">Senha :</label>
+					<input type="password" name="password" class="form-control"
+						placeholder="Digite sua senha" />
+				</div>
+				<input type="hidden" value="ADM" name="authorities" />
+		</div>
+
+
+
+		<div class="text-center">
+			<button class="btn btn-primary col-2 text-center"  type="submit">Cadastrar</button>
+		</div>
+		</form>
+	</div>
+</body>
+</html>
